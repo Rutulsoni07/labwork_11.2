@@ -1,0 +1,58 @@
+﻿Q.1 Write a Program to find the reverse of a 1D array using a Chain of Pointers.
+For example,
+Input:
+Enter the array's size: 5
+
+Enter array elements:
+a[0] = 5
+a[1] = 9
+a[2] = 4
+a[3] = 7
+a[4] = 3
+
+
+Output:
+Reversed array elements:
+3, 7, 4, 9, 5
+
+
+Ans:
+#include <stdio.h> 
+int main(){
+       int size;
+    printf("Enter the array's size: ");
+    scanf("%d", &size);
+    int arr[size];
+    printf("\nEnter array elements:\n");
+    for (int i = 0; i < size; i++) {
+        printf("a[%d] = ", i);
+        scanf("%d", &arr[i]);
+    }
+
+
+    int i;
+    int *p,**q,***r;
+    p=&arr[size-1];
+    q=&p;
+    r=&q;
+    printf("Reversed array elements:");
+    for(i=0;i<size;i++){
+        printf("%d,",***r);
+        p--;
+    }
+    return 0;
+}
+O\p: /tmp/qpFYjMADL9.o
+Enter the array's size: 5
+
+
+Enter array elements:
+a[0] = 5
+a[1] = 9
+a[2] = 4
+a[3] = 7
+a[4] = 3
+Reversed array elements:3,7,4,9,5,
+
+
+=== Code Execution Successful ===
